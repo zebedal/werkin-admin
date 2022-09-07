@@ -3,12 +3,24 @@
 body {
   margin: 0 !important;
 }
-
 html {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
-
 .subtitles {
   color: $dark-grey;
+}
+.MuiDataGrid-row {
+  cursor: pointer;
+}
+.MuiDataGrid-columnHeaders {
+  background-color: $light-grey;
+  color: $dark-grey;
+}
+.MuiDataGrid-cell:focus {
+  outline: none !important;
+}
+fieldset {
+  border: 1px solid $green !important;
+  outline: $green !important;
 }

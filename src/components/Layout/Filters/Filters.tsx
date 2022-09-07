@@ -6,6 +6,8 @@ import {
   Select,
   Typography,
 } from "@mui/material";
+import { MdOutlineFilterList } from "react-icons/md";
+import { Colors } from "utils/consts";
 import styles from "./Filters.module.scss";
 
 const Filters = () => (
@@ -14,9 +16,13 @@ const Filters = () => (
       Member List
     </Typography>
     <Grid mt={3} container gap={2} alignItems="center">
-      <div>Filter by:</div>
-      <FormControl size="small" className={styles.FormControl}>
-        <InputLabel>Collective</InputLabel>
+      <MdOutlineFilterList size={25} color={Colors.DarkGrey} />
+      <FormControl
+        size="small"
+        className={styles.FormControl}
+        sx={{ outline: "red" }}
+      >
+        <InputLabel color="success">Collective</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -30,7 +36,7 @@ const Filters = () => (
         </Select>
       </FormControl>
       <FormControl size="small" className={styles.FormControl}>
-        <InputLabel>Cohort</InputLabel>
+        <InputLabel color="success">Cohort</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -44,7 +50,7 @@ const Filters = () => (
         </Select>
       </FormControl>
       <FormControl size="small" className={styles.FormControl}>
-        <InputLabel>Role</InputLabel>
+        <InputLabel color="success">Role</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -58,7 +64,7 @@ const Filters = () => (
         </Select>
       </FormControl>
       <FormControl size="small" className={styles.FormControl}>
-        <InputLabel>Matched</InputLabel>
+        <InputLabel color="success">Matched</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

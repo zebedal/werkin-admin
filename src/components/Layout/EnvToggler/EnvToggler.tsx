@@ -1,4 +1,5 @@
 import { FormControl, Grid, InputLabel, MenuItem, Select } from "@mui/material";
+import { Colors } from "utils/consts";
 import styles from "./EnvToggler.module.scss";
 
 const EnvToggler = () => (
@@ -14,9 +15,9 @@ const EnvToggler = () => (
       justifyContent="flex-end"
       gap={2}
     >
-      <Grid>Filter by:</Grid>
+      {/* <Grid color={Colors.DarkGrey}>Select environment:</Grid> */}
       <FormControl className={styles.FormControl} size="small">
-        <InputLabel>Environment</InputLabel>
+        <InputLabel color="success">Environment</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -24,9 +25,9 @@ const EnvToggler = () => (
           label="Environment"
           fullWidth
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={10}>Development</MenuItem>
+          <MenuItem value={20}>Release</MenuItem>
+          <MenuItem value={30}>Production</MenuItem>
         </Select>
       </FormControl>
     </Grid>
