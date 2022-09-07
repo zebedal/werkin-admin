@@ -1,3 +1,9 @@
+@import "scss/variables.scss";
+
+.Nav {
+  height: 100%;
+  background-color: $sidebar-background-color;
+}
 .List {
   color: #8699ad;
   transition: 0.3s ease;

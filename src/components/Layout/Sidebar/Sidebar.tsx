@@ -3,11 +3,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { MdAdd, MdPeopleAlt, MdPersonPin } from "react-icons/md";
-import { Colors } from "utils/consts";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => (
-  <nav style={{ background: Colors.Sidebar, height: "100%" }}>
+  <nav className={styles.Nav}>
     <List>
       <ListItem disablePadding className={styles.List}>
         <ListItemButton className={styles.Button}>

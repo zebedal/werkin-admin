@@ -1,0 +1,14 @@
+@import "scss/variables.scss";
+
+body {
+  margin: 0 !important;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.subtitles {
+  color: $dark-grey;
+}
