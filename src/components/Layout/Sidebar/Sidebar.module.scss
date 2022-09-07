@@ -1,0 +1,12 @@
+.List {
+  color: #8699ad;
+  transition: 0.3s ease;
+  align-items: center;
+  &:hover {
+    color: white;
+  }
+  .Button {
+    gap: 10px;
+    padding: 10px;
+  }
+}
