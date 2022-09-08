@@ -2,14 +2,32 @@
 
 .Nav {
   height: 100%;
-  background-color: $sidebar-background-color;
+  background: rgb(51, 53, 71);
+  background: linear-gradient(
+    90deg,
+    $sidebar-background-color 0%,
+    $sidebar-background-color-2 100%
+  );
+  .LogoWrapper {
+    position: relative;
+    width: 88%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 15px 15px 15px 0;
+    & > img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      max-width: 200px;
+    }
+  }
 }
 .List {
   color: #8699ad;
   transition: 0.3s ease;
   align-items: center;
   &:hover {
-    color: white;
+    color: $green;
   }
   .Button {
     gap: 10px;

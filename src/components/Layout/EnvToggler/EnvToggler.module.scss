@@ -1,11 +1,16 @@
 @import "scss/variables.scss";
 
 .FormControl {
-  width: 240px;
+  width: $form-control-size;
 }
 .Container {
   padding: 20px;
-  background: rgb(236, 236, 241);
+  background: rgb(51, 53, 71);
+  background: linear-gradient(
+    90deg,
+    $sidebar-background-color-2 0%,
+    $sidebar-background-color 100%
+  );
   height: 80px;
   align-items: center;
 }
@@ -14,4 +19,7 @@
   background: $green;
   color: white;
   border-radius: 5px;
+}
+.ToggleButton {
+  color: $light-grey !important;
 }

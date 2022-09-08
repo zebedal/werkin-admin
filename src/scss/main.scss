@@ -14,7 +14,7 @@ html {
   cursor: pointer;
 }
 .MuiDataGrid-columnHeaders {
-  background-color: $light-grey;
+  background-color: $table-header;
   color: $dark-grey;
 }
 .MuiDataGrid-cell {
@@ -30,4 +30,13 @@ html {
 fieldset {
   border: 1px solid $green !important;
   outline: $green !important;
+}
+.css-3baera-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
+  color: $green !important;
+}
+.css-ke5b6m-MuiButtonBase-root-MuiButton-root.MuiButton-containedSuccess {
+  background: $green !important;
+  &:hover {
+    background: $dark-green !important;
+  }
 }

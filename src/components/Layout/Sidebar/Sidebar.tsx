@@ -3,10 +3,15 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { MdAdd, MdPeopleAlt, MdPersonPin } from "react-icons/md";
+import logo from "assets/img/fake_logo.svg";
 import styles from "./Sidebar.module.scss";
+import { Box } from "@mui/material";
 
 const Sidebar = () => (
   <nav className={styles.Nav}>
+    <Box className={styles.LogoWrapper}>
+      <img src={logo} alt="getwerkin" />
+    </Box>
     <List>
       <ListItem disablePadding className={styles.List}>
         <ListItemButton className={styles.Button}>

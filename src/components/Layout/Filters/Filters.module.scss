@@ -1,3 +1,9 @@
+@import "scss/variables";
+
 .FormControl {
   flex-grow: 1;
+  max-width: $form-control-size;
+}
+.Icon {
+  cursor: pointer;
 }

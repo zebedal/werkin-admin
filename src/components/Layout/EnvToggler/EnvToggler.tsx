@@ -1,37 +1,69 @@
-import { FormControl, Grid, InputLabel, MenuItem, Select } from "@mui/material";
+import {
+  Box,
+  Grid,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
 import { Colors } from "utils/consts";
+import { useState } from "react";
 import styles from "./EnvToggler.module.scss";
 
-const EnvToggler = () => (
-  <Grid container className={styles.Container}>
-    <Grid item xs={7}>
-      <span className={styles.Env}>Master</span>
-    </Grid>
-    <Grid
-      item
-      xs={5}
-      alignItems="center"
-      display="flex"
-      justifyContent="flex-end"
-      gap={2}
-    >
-      {/* <Grid color={Colors.DarkGrey}>Select environment:</Grid> */}
-      <FormControl className={styles.FormControl} size="small">
-        <InputLabel color="success">Environment</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={""}
-          label="Environment"
-          fullWidth
-        >
-          <MenuItem value={10}>Development</MenuItem>
-          <MenuItem value={20}>Release</MenuItem>
-          <MenuItem value={30}>Production</MenuItem>
-        </Select>
-      </FormControl>
-    </Grid>
-  </Grid>
-);
+const EnvToggler = () => {
+  const [alignment, setAlignment] = useState("dev");
+
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
+    setAlignment(newAlignment);
+  };
+
+  return (
+    <Box paddingLeft={2} paddingRight={2}>
+      <Grid container className={styles.Container}>
+        <Grid xs>
+          <Typography variant="h5" className="subtitles" color={Colors.Green}>
+            Member List
+          </Typography>
+        </Grid>
+        <Grid xs container justifyContent="flex-end">
+          <ToggleButtonGroup
+            color="primary"
+            value={alignment}
+            exclusive
+            onChange={handleChange}
+            aria-label="Platform"
+          >
+            <ToggleButton
+              value="dev"
+              size="small"
+              color="success"
+              className={styles.ToggleButton}
+            >
+              Development
+            </ToggleButton>
+            <ToggleButton
+              value="release"
+              size="small"
+              color="success"
+              className={styles.ToggleButton}
+            >
+              Release
+            </ToggleButton>
+            <ToggleButton
+              value="prod"
+              size="small"
+              color="success"
+              className={styles.ToggleButton}
+            >
+              Production
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
 
 export default EnvToggler;
