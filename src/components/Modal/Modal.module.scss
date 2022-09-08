@@ -1,0 +1,17 @@
+@import "scss/variables";
+
+.SmallText {
+  font-size: 11px;
+}
+.TimeStamp {
+  font-size: $small-font;
+  text-align: right;
+  color: $dark-grey;
+}
+.WorkbookTitle {
+  font-weight: bold;
+  margin-top: 20px;
+}
+.TextField {
+  font-size: 12px;
+}

@@ -17,7 +17,14 @@ html {
   background-color: $light-grey;
   color: $dark-grey;
 }
-.MuiDataGrid-cell:focus {
+.MuiDataGrid-cell {
+  color: $dark-grey;
+}
+.MuiDataGrid-columnHeader {
+  font-weight: bold;
+}
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-columnHeader:focus-within {
   outline: none !important;
 }
 fieldset {

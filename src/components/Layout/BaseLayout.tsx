@@ -14,7 +14,7 @@ const BaseLayout = () => (
       <Grid xs={10} container direction="column">
         <EnvToggler />
         <Filters />
-        <Divider />
+        <Divider variant="middle" />
         <DataGrid />
       </Grid>
     </Grid>
