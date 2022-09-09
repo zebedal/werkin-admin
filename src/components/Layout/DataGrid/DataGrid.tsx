@@ -35,7 +35,7 @@ const DataGrid = () => {
 
   return (
     <>
-      <Grid padding={2} mt={2}>
+      <Grid padding={2}>
         <Table
           rows={rows}
           columns={columns}
