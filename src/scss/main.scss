@@ -2,10 +2,15 @@
 
 body {
   margin: 0 !important;
+  overflow-x: hidden;
 }
 html {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 .subtitles {
   color: $dark-grey;
@@ -39,4 +44,11 @@ fieldset {
   &:hover {
     background: $dark-green !important;
   }
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  font-size: 12px !important;
+}
+label {
+  font-size: 12px !important;
+  line-height: 1.8 !important;
 }

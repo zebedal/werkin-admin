@@ -5,11 +5,9 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { MdOutlineFilterList } from "react-icons/md";
-import { Colors } from "utils/consts";
+import { MdOutlineFilterList, MdDoubleArrow } from "react-icons/md";
 import styles from "./Filters.module.scss";
 
 const Filters = () => {
@@ -21,100 +19,97 @@ const Filters = () => {
 
   return (
     <Grid
-      padding={2}
+      xs={12}
       container
-      direction="column"
+      gap={2}
+      alignItems="center"
+      justifyContent="flex-end"
+      padding={2}
       style={{ flexWrap: "nowrap" }}
     >
-      <Grid
-        xs={12}
-        container
-        gap={2}
-        alignItems="center"
-        mt={2}
-        mb={2}
-        justifyContent="flex-end"
-      >
-        <Button
-          variant="contained"
-          color="success"
-          endIcon={
+      <Button
+        variant="contained"
+        color="success"
+        onClick={handleFilters}
+        endIcon={
+          !filtersOpen ? (
             <MdOutlineFilterList
               size={25}
               color="white"
-              onClick={handleFilters}
               className={styles.Icon}
             />
-          }
-        >
-          Filters
-        </Button>
+          ) : (
+            <MdDoubleArrow size={25} color="white" className={styles.Icon} />
+          )
+        }
+      >
+        {!filtersOpen ? "Filters" : "Close"}
+      </Button>
 
-        {filtersOpen && (
-          <>
-            <FormControl
-              size="small"
-              className={styles.FormControl}
-              sx={{ outline: "red" }}
+      {filtersOpen && (
+        <Grid container className={styles.FiltersWrapper} gap={2} xs={8}>
+          <FormControl
+            size="small"
+            className={styles.FormControl}
+            sx={{ outline: "red" }}
+          >
+            <InputLabel color="success">Collective</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={""}
+              label="Environment"
+              fullWidth
             >
-              <InputLabel color="success">Collective</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Environment"
-                fullWidth
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl size="small" className={styles.FormControl}>
-              <InputLabel color="success">Cohort</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Environment"
-                fullWidth
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl size="small" className={styles.FormControl}>
-              <InputLabel color="success">Role</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Environment"
-                fullWidth
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl size="small" className={styles.FormControl}>
-              <InputLabel color="success">Matched</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Environment"
-                fullWidth
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-          </>
-        )}
-      </Grid>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl size="small" className={styles.FormControl}>
+            <InputLabel color="success">Cohort</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={""}
+              label="Environment"
+              fullWidth
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl size="small" className={styles.FormControl}>
+            <InputLabel color="success">Role</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={""}
+              label="Environment"
+              fullWidth
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl size="small" className={styles.FormControl}>
+            <InputLabel color="success">Matched</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={""}
+              label="Environment"
+              fullWidth
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+      )}
     </Grid>
   );
 };

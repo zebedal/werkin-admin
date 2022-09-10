@@ -2,8 +2,21 @@
 
 .FormControl {
   flex-grow: 1;
-  max-width: $form-control-size;
 }
 .Icon {
   cursor: pointer;
+}
+.FiltersWrapper {
+  animation: open 0.5s ease forwards;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

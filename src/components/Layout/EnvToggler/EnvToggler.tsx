@@ -7,10 +7,19 @@ import {
 } from "@mui/material";
 import { Colors } from "utils/consts";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./EnvToggler.module.scss";
+
+type LocationState = {
+  header: string;
+};
 
 const EnvToggler = () => {
   const [alignment, setAlignment] = useState("dev");
+
+  const location = useLocation();
+
+  const header = location.state as LocationState;
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -24,7 +33,7 @@ const EnvToggler = () => {
       <Grid container className={styles.Container}>
         <Grid xs>
           <Typography variant="h5" className="subtitles" color={Colors.Green}>
-            Member List
+            {header.header}
           </Typography>
         </Grid>
         <Grid xs container justifyContent="flex-end">

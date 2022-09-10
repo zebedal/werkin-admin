@@ -1,9 +1,10 @@
 import Box from "@mui/material/Box";
-import { Divider, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import Sidebar from "./Sidebar/Sidebar";
 import EnvToggler from "./EnvToggler/EnvToggler";
-import Filters from "./Filters/Filters";
-import DataGrid from "./DataGrid/DataGrid";
+import MembersList from "components/MembersList/MembersList";
+import MatchList from "components/MatchList/MatchList";
+import { Routes, Route } from "react-router-dom";
 
 const BaseLayout = () => (
   <Box height="100vh">
@@ -11,11 +12,12 @@ const BaseLayout = () => (
       <Grid item xs={2}>
         <Sidebar />
       </Grid>
-      <Grid xs={10} container direction="column">
+      <Grid xs={10}>
         <EnvToggler />
-        <Filters />
-
-        <DataGrid />
+        <Routes>
+          <Route path="/" element={<MembersList />} />
+          <Route path="/match" element={<MatchList />} />
+        </Routes>
       </Grid>
     </Grid>
   </Box>

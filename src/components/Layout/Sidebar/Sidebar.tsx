@@ -6,6 +6,7 @@ import { MdAdd, MdPeopleAlt, MdPersonPin } from "react-icons/md";
 import logo from "assets/img/fake_logo.svg";
 import styles from "./Sidebar.module.scss";
 import { Box } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => (
   <nav className={styles.Nav}>
@@ -20,16 +21,20 @@ const Sidebar = () => (
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding className={styles.List}>
-        <ListItemButton className={styles.Button}>
-          <MdPeopleAlt size={20} />
-          <ListItemText primary="Member list" />
-        </ListItemButton>
+        <NavLink to="/" state={{ header: "Member list" }}>
+          <ListItemButton className={styles.Button}>
+            <MdPeopleAlt size={20} />
+            <ListItemText primary="Member list" />
+          </ListItemButton>
+        </NavLink>
       </ListItem>
       <ListItem disablePadding className={styles.List}>
-        <ListItemButton className={styles.Button}>
-          <MdPersonPin size={20} />
-          <ListItemText primary="Match list" />
-        </ListItemButton>
+        <NavLink to="/match" state={{ header: "Match list" }}>
+          <ListItemButton className={styles.Button}>
+            <MdPersonPin size={20} />
+            <ListItemText primary="Match list" />
+          </ListItemButton>
+        </NavLink>
       </ListItem>
     </List>
   </nav>
