@@ -9,10 +9,10 @@ import { Routes, Route } from "react-router-dom";
 const BaseLayout = () => (
   <Box height="100vh">
     <Grid container height="100%">
-      <Grid item xs={2}>
+      <Grid item xs={3} md={2} padding={1}>
         <Sidebar />
       </Grid>
-      <Grid xs={10}>
+      <Grid xs={9} md={10} pt={1}>
         <EnvToggler />
         <Routes>
           <Route path="/" element={<MembersList />} />

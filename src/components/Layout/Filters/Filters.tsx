@@ -7,7 +7,7 @@ import {
   Select,
 } from "@mui/material";
 import { useState } from "react";
-import { MdOutlineFilterList, MdDoubleArrow } from "react-icons/md";
+import { MdOutlineFilterList, MdChevronRight } from "react-icons/md";
 import styles from "./Filters.module.scss";
 
 const Filters = () => {
@@ -39,7 +39,7 @@ const Filters = () => {
               className={styles.Icon}
             />
           ) : (
-            <MdDoubleArrow size={25} color="white" className={styles.Icon} />
+            <MdChevronRight size={25} color="white" className={styles.Icon} />
           )
         }
       >
