@@ -1,5 +1,15 @@
 @import "scss/variables";
 
+.ModalHeader {
+  background: linear-gradient(
+    90deg,
+    $sidebar-background-color-2 0%,
+    $sidebar-background-color 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .SmallText {
   font-size: 11px;
 }
@@ -14,4 +24,7 @@
 }
 .TextField {
   font-size: 12px;
+}
+.CloseIcon {
+  cursor: pointer;
 }

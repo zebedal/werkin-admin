@@ -33,7 +33,7 @@ const EnvToggler = () => {
       <Grid container className={styles.Container}>
         <Grid xs>
           <Typography variant="h5" className="subtitles" color={Colors.Green}>
-            {header.header}
+            {/* {header.header} */}
           </Typography>
         </Grid>
         <Grid xs container justifyContent="flex-end">

@@ -3,6 +3,7 @@ import { DataGrid as Table, GridEventListener } from "@mui/x-data-grid";
 import Modal from "components/Modal/Modal";
 import { rows, columns } from "mocks/dataGrid";
 import { useState } from "react";
+import styles from "./DataGrid.module.scss";
 
 export interface RowParams {
   id: number;
@@ -45,6 +46,7 @@ const DataGrid = () => {
           pagination
           autoHeight
           onRowClick={handleRowClick}
+          className={styles.Wrapper}
         />
       </Grid>
       {isModalOpen && selectedRow && (

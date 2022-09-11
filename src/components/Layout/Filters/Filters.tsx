@@ -24,7 +24,9 @@ const Filters = () => {
       gap={2}
       alignItems="center"
       justifyContent="flex-end"
-      padding={2}
+      pt={6}
+      pb={0}
+      pr={2}
       style={{ flexWrap: "nowrap" }}
     >
       <Button

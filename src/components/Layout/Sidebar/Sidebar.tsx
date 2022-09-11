@@ -2,7 +2,12 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { MdAdd, MdPeopleAlt, MdPersonPin } from "react-icons/md";
+import {
+  MdAdd,
+  MdPeopleAlt,
+  MdPersonPin,
+  MdStackedBarChart,
+} from "react-icons/md";
 import logo from "assets/img/fake_logo.svg";
 import { MdLogout } from "react-icons/md";
 import styles from "./Sidebar.module.scss";
@@ -35,6 +40,14 @@ const Sidebar = () => (
             <ListItemButton className={styles.Button}>
               <MdPersonPin size={20} />
               <ListItemText primary="Match list" />
+            </ListItemButton>
+          </NavLink>
+        </ListItem>
+        <ListItem disablePadding className={styles.List}>
+          <NavLink to="/charts" state={{ header: "Insights" }}>
+            <ListItemButton className={styles.Button}>
+              <MdStackedBarChart size={20} />
+              <ListItemText primary="Insights" />
             </ListItemButton>
           </NavLink>
         </ListItem>

@@ -1,6 +1,15 @@
-import { Box, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  TextField,
+  Typography,
+  Grid,
+  Divider,
+} from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import { RowParams } from "components/Layout/DataGrid/DataGrid";
+import { Colors } from "utils/consts";
+import { MdClose } from "react-icons/md";
 import styles from "./Modal.module.scss";
 
 export interface SimpleDialogProps {
@@ -12,11 +21,19 @@ export interface SimpleDialogProps {
 const Modal = ({ open, onClose, params }: SimpleDialogProps) => {
   return (
     <Dialog open={open} onClose={onClose}>
-      <Box padding={3}>
+      <Box padding={3} className={styles.ModalHeader}>
+        <Typography id="modal-modal-title" variant="h6" color={Colors.Green}>
+          Hi {params.firstName}
+        </Typography>
+        <MdClose
+          color={Colors.Green}
+          size={25}
+          className={styles.CloseIcon}
+          onClick={onClose}
+        />
+      </Box>
+      <Box padding={3} style={{ overflowY: "auto" }}>
         <Box>
-          <Typography id="modal-modal-title" variant="h6">
-            Hi {params.firstName}
-          </Typography>
           <div className={styles.WorkbookTitle}>
             {params.firstName} personal programme workbook
           </div>
@@ -93,6 +110,12 @@ const Modal = ({ open, onClose, params }: SimpleDialogProps) => {
           <p className={styles.TimeStamp}>Last updated 12.58 GMT, 06/09/22</p>
         </Box>
       </Box>
+      <Divider light />
+      <Grid container padding={3} justifyContent="flex-end">
+        <Button variant="contained" color="success">
+          Update
+        </Button>
+      </Grid>
     </Dialog>
   );
 };
